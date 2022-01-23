@@ -1,5 +1,7 @@
 import YOU_KEY_API from "./key.js"
 
+const anyKey = (typeof YOU_KEY_API === 'string');
+
 const input = document.getElementById('input');
 const [grid] = document.getElementsByClassName('grid');
 
@@ -9,7 +11,7 @@ input.addEventListener('keydown', function(event) {
 
 async function loadImg (value = 'people', clear) {
   if(clear) removeImages();
-
+  
   let url =  `https://api.pexels.com/v1/search?query=${value}?page=10&per_page=40`;
   
   let authentication = {
@@ -18,18 +20,15 @@ async function loadImg (value = 'people', clear) {
     }
   }
 
-  console.log('KEY',YOU_KEY_API)
-
   let data = {};
-  if (YOU_KEY_API) {
-    console.log("atenticacao")
+  if (anyKey) {
     authentication.headers.Authorization = YOU_KEY_API;
     data = await fetch(url, authentication);
   } else {
-    console.log("SEM atenticacao")
     data =  await fetch(url);
+    if (!data.ok) throw "API_PIXELS: Objeto de demonstracao esta indisponivel"
   }
-  
+
 
   const response = await data.json();
 
@@ -64,12 +63,20 @@ function dayNightMode() {
 window.addEventListener('load', dayNightMode);
 
 window.onload = async () => {
-  await loadImg('people');
+  try {
+    await loadImg('people');
+  } catch (err) {
+    alert(err)
+  }
 }
 
 window.addEventListener('scroll', async () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight -5) {
-    await loadImg('people', false);
+    try {
+      await loadImg('people', false);
+    } catch (err) {
+      alert(err)
+    }
   }
 })
