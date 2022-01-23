@@ -1,4 +1,4 @@
-import YOU_KEY_API from "./key.js"
+//import YOU_KEY_API from "./key.js"
 
 const anyKey = (typeof YOU_KEY_API === 'string');
 const input = document.getElementById('input');
