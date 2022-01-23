@@ -1,4 +1,4 @@
-//import YOU_KEY_API from "./key.js"
+import YOU_KEY_API from "./key.js"
 
 const anyKey = (typeof YOU_KEY_API === 'string');
 const input = document.getElementById('input');
@@ -56,7 +56,7 @@ window.addEventListener('scroll', async () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight -5) {
     try {
-      await loadImg('people', false);
+      await loadImg(input.value, false);
     } catch (err) {
       alert(err)
     }

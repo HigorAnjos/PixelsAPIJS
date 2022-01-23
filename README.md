@@ -8,5 +8,6 @@
  - Fetch
  - async/await
  - Control structures
+ - Default Parameters
 
 [GitHub Pages 😊](https://higoranjos.github.io/PixelsAPIJS/)
