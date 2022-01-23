@@ -1,13 +1,14 @@
 # Pixels API JS
 
 ## JavaScript used
- - DOM manipulation
- - Data structures
+ - DOM Manipulation
+ - Data Structures
  - Functions
- - Event listeners
+ - Event Listeners
  - Fetch
- - async/await
+ - Async/Await
  - Control structures
  - Default Parameters
+ - Array Destructuring
 
 [GitHub Pages 😊](https://higoranjos.github.io/PixelsAPIJS/)
