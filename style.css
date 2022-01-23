@@ -3,10 +3,18 @@
   margin: 0;
 }
 
-body {
+
+body.dark {
   font-family: 'Comfortaa', cursive;
   background-color: black;
   color: white;
+  transition: 0.5s;
+}
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
 
 header {
@@ -77,18 +85,78 @@ input:focus {
 
 .img{
   margin: 5px;
-  transition: 1s;
+  transition: 1s; 
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.75);
 }
+
 .img:hover{
   border: 2px solid rgba(6, 228, 6, 0.7);
   transform: scale(1.12);
+}
+
+.img.dark{
+  margin: 5px;
+  transition: 1s;
+  box-shadow: 5px 5px 10px 0px rgba(202, 202, 202, 0.5);
 }
 
 
 footer {
   text-align: center;
   margin: 50px;
+}
+
+/*Dark Mode*/
+
+#light-dark {
+  margin: 7px 14px;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
 }
 
 @media(max-width: 768px) {
@@ -107,6 +175,18 @@ footer {
   .nav h2 {
     padding: 5px 0;
   }
+  #light-dark {
+    transform: scale(0.7);
+  }
+  .fa-moon {
+    color: #f1c40f;
+    transform: scale(1);
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+    transform: scale(1);
+  }
 }
 
 @media(max-width: 480px) {
@@ -121,5 +201,16 @@ footer {
   .search-box input {
     font-size: .7rem;
   }
+  #light-dark {
+    transform: scale(0.7);
+  }
+  .fa-moon {
+    color: #f1c40f;
+    transform: scale(0.6);
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+    transform: scale(0.6);
+  }
 }
-

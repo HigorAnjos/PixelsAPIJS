@@ -1,7 +1,6 @@
 //import YOU_KEY_API from "./key.js"
 
 const anyKey = (typeof YOU_KEY_API === 'string');
-
 const input = document.getElementById('input');
 const [grid] = document.getElementsByClassName('grid');
 
@@ -10,7 +9,7 @@ input.addEventListener('keydown', function(event) {
 });
 
 async function loadImg (value = 'people', clear) {
-  if(clear) removeImages();
+  if (clear) grid.innerHTML = '';
   
   let url =  `https://api.pexels.com/v1/search?query=${value}?page=10&per_page=40`;
   
@@ -29,7 +28,6 @@ async function loadImg (value = 'people', clear) {
     if (!data.ok) throw "API_PIXELS: Objeto de demonstracao esta indisponivel"
   }
 
-
   const response = await data.json();
 
   const imageNodes = []
@@ -44,24 +42,7 @@ async function loadImg (value = 'people', clear) {
   }
 }
 
-function removeImages() {
-  grid.innerHTML = '';
-}
-
-function dayNightMode() {
-  const date = new Date();
-  const hour = date.getHours();
-
-  if (hour >= 7 && hour <= 19) {
-    document.body.style.backgroundColor = 'whitesmoke';
-    document.body.style.color = 'black';
-  } else {
-    document.body.style.backgroundColor = 'black';
-    document.body.style.color = 'white';
-  }
-}
-window.addEventListener('load', dayNightMode);
-
+/* Init */
 window.onload = async () => {
   try {
     await loadImg('people');
@@ -70,6 +51,7 @@ window.onload = async () => {
   }
 }
 
+/* infinity scroll */
 window.addEventListener('scroll', async () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   if (scrollTop + clientHeight >= scrollHeight -5) {
@@ -80,3 +62,13 @@ window.addEventListener('scroll', async () => {
     }
   }
 })
+
+/*Dark mode */
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
+  document.querySelectorAll('.img').forEach((img) => {
+    img.classList.toggle('dark')
+  })
+});
