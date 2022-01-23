@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Fetch pexels API JS</title>
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <div class="nav">
+        <h2><i class="fa-solid fa-camera-retro" style="color: orange"></i> Pixels API</h2>
+        <div class="search-box">
+          <input type="text" id="input" placeholder="Search..."><i onclick="loadImg()" class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="grid"></div>
+  </div>
+  
+  <footer>
+    <a href="https://www.pexels.com">Photos provided by Pexels</a>
+  </footer>
+
+  <script src="scipt.js" type="module" defer></script>
+
+</body>
+</html>
