@@ -25,7 +25,7 @@ async function loadImg (value = 'people', clear) {
     data = await fetch(url, authentication);
   } else {
     data =  await fetch(url);
-    if (!data.ok) throw "API_PIXELS: Objeto de demonstracao esta indisponivel. Cadatre a key da API ou Volte mais tarde"
+    if (!data.ok) throw "API_PIXELS: Objeto de demonstracao esta indisponivel. Cadastre a key da API ou Volte mais tarde"
   }
 
   const response = await data.json();
