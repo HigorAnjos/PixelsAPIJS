@@ -11,4 +11,4 @@
  - Default Parameters
  - Array Destructuring
 
-[GitHub Pages 😊](https://higoranjos.github.io/PixelsAPIJS/)
+## [GitHub Pages 😊](https://higoranjos.github.io/PixelsAPIJS/)
