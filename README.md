@@ -11,6 +11,14 @@ const YOU_KEY_API = "CodigoFornecidoPelaPixels"
 export default YOU_KEY_API
 ~~~
 
+E descomentar a primeira linha do aquivo 
+
+script.js
+
+~~~javaScript
+//import YOU_KEY_API from "./key.js"
+~~~
+
 
 ## JavaScript used
  - DOM Manipulation
