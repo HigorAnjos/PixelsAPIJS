@@ -30,5 +30,6 @@ script.js
  - Control structures
  - Default Parameters
  - Array Destructuring
+ - Try/Catch
 
 ## [GitHub Pages 😊](https://higoranjos.github.io/PixelsAPIJS/)
